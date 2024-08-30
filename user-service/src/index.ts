@@ -7,6 +7,10 @@ app.get('/users', (req: Request, res: Response) => {
   res.json([{ id: 1, name: 'John Doe' }, { id: 2, name: 'Tom Jelly' }]);
 });
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.listen(port, () => {
   console.log(`User Server running at port:${port}`);
 });
